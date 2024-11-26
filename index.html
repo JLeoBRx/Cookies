@@ -2,11 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content='width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=yes'>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=yes">
     <title>Cookies</title>
     <link rel="stylesheet" href="TemplateData/style.css">
     <style>
-        html{
+        html {
             height: -webkit-fill-available;
         }
         body {
@@ -16,6 +16,8 @@
             min-height: -webkit-fill-available;
             width: 100vw;
             overflow: hidden;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4 50%, #fad0c4);
+            font-family: Arial, sans-serif;
         }
         .ctaDiv {
             display: flex;
@@ -27,27 +29,49 @@
             right: 0;
             top: 0;
             bottom: 0;
-            background: #fffa;
+            background: rgba(255, 255, 255, 0.9);
             z-index: 99;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+        #startARButton {
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        #startARButton:hover {
+            transform: scale(1.1);
+            background: linear-gradient(90deg, #feb47b, #ff7e5f);
+        }
+        #chooseCamSel {
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <!--IMAGETARGETS-->
-		<imagetarget id='bfly' src='targets/bfly.png'></imagetarget>
-		<imagetarget id='flower' src='targets/flower.png'></imagetarget>
-		<imagetarget id='lady' src='targets/lady.png'></imagetarget>
-		<imagetarget id='reel' src='targets/reel.png'></imagetarget>
-		<imagetarget id='rmn' src='targets/rmn.png'></imagetarget>
-		<imagetarget id='bear' src='targets/bear.png'></imagetarget>
-		<imagetarget id='Cookie comum' src='targets/Cookie comum.jpeg'></imagetarget>
-		<imagetarget id='Cookie dourado' src='targets/Cookie dourado.jpeg'></imagetarget>
-
-    <video id="webcam-video" muted autoplay playsinline style="width:1px;position:absolute"></video>
+    <!-- Existing content -->
     <div id="startARDiv" class="ctaDiv">
         <select id="chooseCamSel" style="display: none;" onchange="SelectCam()"></select>
-        <p style="text-align: center; width:60vw;">Você precisa autorizar o acesso a sua câmera e apontar para a imagem na embalagem do seu cookie!</p>
-        <button id="startARButton" onclick="StartAR()" style="display:none">Eu autorizo!</button>
+        <p style="text-align: center; width: 60vw;">
+            Você precisa autorizar o acesso à sua câmera e apontar para a imagem na embalagem do seu cookie!
+        </p>
+        <button id="startARButton" onclick="StartAR()">Eu autorizo!</button>
     </div>
     <div id="screenshotDiv" style="display: none;" class="ctaDiv">
         <div style="position:relative; background-color:white; padding:10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25);">
