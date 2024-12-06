@@ -31,7 +31,25 @@
             background: #fffa;
             z-index: 99;
         }
-    </style>
+	     #startARButton {
+        background: linear-gradient(90deg, #ff7e5f, #feb47b);
+        color: white;
+        border: none;
+        border-radius: 30px;
+        padding: 15px 30px;
+        font-size: 1.2em;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        display: none; /* Inicialmente escondido */
+    }
+    #startARButton:hover {
+        transform: scale(1.1);
+        background: linear-gradient(90deg, #feb47b, #ff7e5f);
+    }
+</style>
+  
 </head>
 <body>
     <!--IMAGETARGETS-->
@@ -48,7 +66,7 @@
     <div id="startARDiv" class="ctaDiv">
         <select id="chooseCamSel" style="display: none;" onchange="SelectCam()"></select>
         <p style="text-align: center; width:60vw;">Você precisa autorizar o acesso à sua câmera e apontar para a imagem na embalagem do seu cookie!</p>
-        <button id="startARButton" onclick="StartAR()" style="display:none">Eu autorizo!</button>
+      <button id="startARButton" onclick="StartAR()">Eu autorizo!</button>
     </div>
     <div id="screenshotDiv" style="display: none;" class="ctaDiv">
         <div style="position:relative; background-color:white; padding:10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25);">
